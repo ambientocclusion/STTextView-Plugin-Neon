@@ -38,6 +38,7 @@ public class Coordinator {
 
         // set textview default font to theme default font
         textView.font = theme.font(forToken: "plain") ?? textView.font
+        textView.textColor = theme.color(forToken: "plain") ?? textView.textColor
 
         highlighter = Neon.Highlighter(textInterface: STTextViewSystemInterface(textView: textView) { neonToken in
             var attributes: [NSAttributedString.Key: Any] = [:]
