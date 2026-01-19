@@ -53,18 +53,9 @@ public class Coordinator {
                 if let themeFont = theme.font(forToken: TokenName(neonToken.name)) {
                     attributes[.font] = themeFont
                 }
-            } else if let themeDefaultColor = theme.color(forToken: "plain") {
-                attributes[.foregroundColor] = themeDefaultColor
-                
-                // TODO: Remove this later.
-                // print("themeDefaultColor \(themeDefaultColor) for token \(TokenName(neonToken.name))")
-
-                if let themeFont = theme.font(forToken: TokenName(neonToken.name)) {
-                    attributes[.font] = themeFont
-                }
+                return attributes
             }
-
-            return !attributes.isEmpty ? attributes : nil
+            return nil
         }, tokenProvider: tokenProvider(textContentManager: textView.textContentManager))
 
         // initial parse of the whole content
