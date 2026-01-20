@@ -21,6 +21,7 @@ class STTextViewSystemInterface: TextSystemInterface {
         }
 
         textView.textLayoutManager.removeRenderingAttribute(.foregroundColor, for: textRange)
+        textView.textLayoutManager.addRenderingAttribute(.foregroundColor, value: textView.textColor, for: textRange)
         textView.addAttributes([.font: textView.font], range: range)
     }
 
